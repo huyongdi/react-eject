@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-//import { Router, Link } from "@reach/router";
-import {HashRouter as Router, Route, Link} from "react-router-dom";
+import {HashRouter as Router, Link} from "react-router-dom";
 
 export default class Header extends Component {
   render() {

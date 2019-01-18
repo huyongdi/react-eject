@@ -7,9 +7,9 @@ import store from './rematch'
 const { dispatch } = store
 
 class App extends Component {
-//  componentDidMount() {
-//    dispatch.getFile.getMdText()
-//  }
+  componentDidMount() {
+    dispatch.getFile.getMdText()
+  }
 
   render() {
     return (
