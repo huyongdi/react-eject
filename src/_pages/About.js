@@ -4,7 +4,7 @@ export default class About extends Component {
   render() {
     return (
         <div className=''>
-          我是关于待开发
+          关于我
         </div>
     );
   }

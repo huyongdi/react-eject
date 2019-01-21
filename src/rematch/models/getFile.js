@@ -1,4 +1,4 @@
-import articleList from '../../_pages/list'
+import articleList from '../../_pages/_articles/list'
 import axios from "axios";
 
 //通过时间大小排序

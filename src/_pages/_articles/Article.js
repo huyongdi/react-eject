@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import View from './View'
 import {Pagination, BackTop, Input, message} from 'antd';
-import store from '../rematch'
+import store from '../../rematch/index'
 
 const {dispatch} = store
 
