@@ -266,6 +266,7 @@ module.exports = function (webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+//        'jquery': 'jquery'
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -621,6 +622,10 @@ module.exports = function (webpackEnv) {
         silent: true,
         formatter: typescriptFormatter,
       }),
+//      new webpack.ProvidePlugin({
+//        $:"jquery",
+//        jQuery:"jquery",
+//      }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {HashRouter as Router, Route} from "react-router-dom";
-import Home from '../_pages/Home'
+import Home from '../_pages/_home/Home'
 import Article from '../_pages/_articles/Article'
-import About from '../_pages/About'
+import About from '../_pages/_about/About'
 
 export default class Header extends Component {
   render() {
