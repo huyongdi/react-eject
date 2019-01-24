@@ -20,7 +20,7 @@ export default class Home extends Component {
         `${process.env.PUBLIC_URL}/plugins/SatisfySL.json`,
         [
           {
-            text: "maoyi:",
+            text: "Life was like a box of chocolates, you never know what you're gonna get.",
             textAlign: "left",
             y: 20,
             x: 30,
@@ -29,9 +29,10 @@ export default class Home extends Component {
             fontSize: fontSize.small
           },
           {
-            text: "wo mei you xihuan de ren",
-            x: posX,
-            duration: 4000
+            text: "But",
+            x:20,
+            y:-60,
+            duration: 3000
           },
         ],
         {
@@ -45,7 +46,7 @@ export default class Home extends Component {
         `${process.env.PUBLIC_URL}/plugins/SatisfySL.json`,
         [
           {
-            text: "zhenren:",
+            text: "To make each day count",
             textAlign: "left",
             y: 20,
             x: 30,
@@ -54,7 +55,7 @@ export default class Home extends Component {
             fontSize: fontSize.small
           },
           {
-            text: "wo xia shou wanle",
+            text: "Get busy living or get busy dieing.",
             x: posX,
             duration: 4000
           },
@@ -70,7 +71,7 @@ export default class Home extends Component {
         `${process.env.PUBLIC_URL}/plugins/SatisfySL.json`,
         [
           {
-            text: "sjj:",
+            text: "2019",
             textAlign: "left",
             delay: 500,
             y: 20,
@@ -79,7 +80,7 @@ export default class Home extends Component {
             fontSize: fontSize.small
           },
           {
-            text: "dajiahao woshi jj suojunjie",
+            text: "keep it up",
             y: 40,
             x: posX,
             duration: 4000
