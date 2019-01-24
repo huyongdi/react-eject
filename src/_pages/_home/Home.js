@@ -10,9 +10,9 @@ export default class Home extends Component {
     let fontSize = {small: 12, medium: 14};
     let played = [0, 0, 0];
     let vara = [];
-    let bodyFontSize = Math.max(16 * ratio, 10);
+//    let bodyFontSize = Math.max(16 * ratio, 10);
     let posX = Math.max(80 * ratio, 30);
-    $("#container").css("font-size", bodyFontSize + "px");
+//    $("#container").css("font-size", bodyFontSize + "px");
     fontSize.small = Math.max(fontSize.small * ratio, 7);
     fontSize.medium = Math.max(fontSize.medium * ratio, 10);
     vara[0] = new Vara(
@@ -143,39 +143,37 @@ export default class Home extends Component {
         <div className=''>
           <div className="bookContent">
             <div className="v-center"/>
-            <div id="container">
-              <div className="book">
-                <div className="first paper">
-                  <div className="page front contents">
-                    <div className="intro">
-                      <h2>葵花宝典</h2>
-                      <h1>2019</h1>
-                    </div>
+            <div className="book">
+              <div className="first paper">
+                <div className="page front contents">
+                  <div className="intro">
+                    <h2>葵花宝典</h2>
+                    <h1>2019</h1>
                   </div>
-                  <div className="page back"/>
                 </div>
-                <div className="second paper">
-                  <div className="page front contents">
-                    <div id="vara-container"/>
-                  </div>
-                  <div className="page back"/>
-                </div>
-                <div className="third paper">
-                  <div className="page front contents">
-                    <div id="vara-container2"/>
-                  </div>
-                  <div className="page back"/>
-                </div>
-                <div className="fourth paper">
-                  <div className="page last front contents">
-                    <div id="vara-container3"/>
-                  </div>
-                  <div className="page back"/>
-                </div>
-                <div className="side"/>
-                <div className="bottom"/>
-                <div className="shadow"/>
+                <div className="page back"/>
               </div>
+              <div className="second paper">
+                <div className="page front contents">
+                  <div id="vara-container"/>
+                </div>
+                <div className="page back"/>
+              </div>
+              <div className="third paper">
+                <div className="page front contents">
+                  <div id="vara-container2"/>
+                </div>
+                <div className="page back"/>
+              </div>
+              <div className="fourth paper">
+                <div className="page last front contents">
+                  <div id="vara-container3"/>
+                </div>
+                <div className="page back"/>
+              </div>
+              <div className="side"/>
+              <div className="bottom"/>
+              <div className="shadow"/>
             </div>
           </div>
         </div>
