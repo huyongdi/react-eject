@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './home.css'
+import './home.less'
 import $ from 'jquery'
 import Vara from 'vara'
 
@@ -141,43 +141,43 @@ export default class Home extends Component {
   render() {
     return (
         <div className=''>
-
-          <div className="v-center"/>
-          <div id="container">
-            <div className="book">
-              <div className="first paper">
-                <div className="page front contents">
-                  <div className="intro">
-                    <h2>葵花宝典</h2>
-                    <h1>2019</h1>
+          <div className="bookContent">
+            <div className="v-center"/>
+            <div id="container">
+              <div className="book">
+                <div className="first paper">
+                  <div className="page front contents">
+                    <div className="intro">
+                      <h2>葵花宝典</h2>
+                      <h1>2019</h1>
+                    </div>
                   </div>
+                  <div className="page back"/>
                 </div>
-                <div className="page back"/>
-              </div>
-              <div className="second paper">
-                <div className="page front contents">
-                  <div id="vara-container"/>
+                <div className="second paper">
+                  <div className="page front contents">
+                    <div id="vara-container"/>
+                  </div>
+                  <div className="page back"/>
                 </div>
-                <div className="page back"/>
-              </div>
-              <div className="third paper">
-                <div className="page front contents">
-                  <div id="vara-container2"/>
+                <div className="third paper">
+                  <div className="page front contents">
+                    <div id="vara-container2"/>
+                  </div>
+                  <div className="page back"/>
                 </div>
-                <div className="page back"/>
-              </div>
-              <div className="fourth paper">
-                <div className="page last front contents">
-                  <div id="vara-container3"/>
+                <div className="fourth paper">
+                  <div className="page last front contents">
+                    <div id="vara-container3"/>
+                  </div>
+                  <div className="page back"/>
                 </div>
-                <div className="page back"/>
+                <div className="side"/>
+                <div className="bottom"/>
+                <div className="shadow"/>
               </div>
-              <div className="side"/>
-              <div className="bottom"/>
-              <div className="shadow"/>
             </div>
           </div>
-
         </div>
     );
   }
