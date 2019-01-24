@@ -20,7 +20,7 @@ export default class Home extends Component {
         `${process.env.PUBLIC_URL}/plugins/SatisfySL.json`,
         [
           {
-            text: "Life was like a box of chocolates, you never know what you're gonna get.",
+            text: "Life was like a box of chocolates, you never know what you're gonna get.But",
             textAlign: "left",
             y: 20,
             x: 30,
@@ -28,12 +28,11 @@ export default class Home extends Component {
             duration: 1500,
             fontSize: fontSize.small
           },
-          {
-            text: "But",
-            x:20,
-            y:-60,
-            duration: 3000
-          },
+//          {
+//            text: "But",
+//            x:20,
+//            duration: 3000
+//          },
         ],
         {
           strokeWidth: 2,
