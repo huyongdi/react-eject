@@ -4,10 +4,8 @@ export default class About extends Component {
   render() {
     return (
         <div className=''>
-          关于我
+          努力学习的小前端
         </div>
     );
   }
 }
-
-

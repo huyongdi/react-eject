@@ -109,7 +109,7 @@ export default class Home extends Component {
           vara[ix].playAll();
           vara[ix].animationEnd(function (i, o) {
             played[ix] = 1;
-            if (i == "link") {
+            if (i === "link") {
               let group = o.container;
               let rect = vara[2].createNode("rect", {
                 x: 0,
@@ -128,7 +128,7 @@ export default class Home extends Component {
         }
       });
       $(".back").click(function () {
-        if ($(this).parent(".paper").index() == 0) $(".book").removeClass("open");
+        if ($(this).parent(".paper").index() === 0) $(".book").removeClass("open");
         $(this).parent(".paper").removeClass("open");
       });
     });

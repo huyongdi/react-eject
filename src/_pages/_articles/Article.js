@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import View from './View'
-import {Pagination, BackTop, Input, message} from 'antd';
+import { Pagination, BackTop, Input, message, Switch, Icon } from 'antd';
 import store from '../../rematch/index'
 
-const {dispatch} = store
+const { dispatch } = store
 
 const Search = Input.Search;
 export default class Article extends Component {
   state = {
+    //旧版文章参数
     mdArr: [],//文件列表
     currentPage: 1,//当前页码
     currentArticle: {
@@ -15,16 +16,18 @@ export default class Article extends Component {
       content: '', //要展示文件的内容
     },
     searchValue: '',//搜索框的值
+
+    //新版文章参数
+    showNew: true,
   }
 
   allArticle = [] //所有文章
   webArticle = [] //所有文章
   otherArticle = [] //所有文章
 
-
   //搜索文章
   onChange = (e) => {
-    this.setState({searchValue: e.target.value})
+    this.setState({ searchValue: e.target.value })
   }
   onSearch = (value) => {
     let newMdArr = []
@@ -48,7 +51,7 @@ export default class Article extends Component {
 
   //点击文章分类
   typeClick = (type) => () => {
-    this.setState({searchValue: ''})
+    this.setState({ searchValue: '' })
     let mdArr = []
     if (type === 0) { //全部
       mdArr = this.allArticle
@@ -57,7 +60,7 @@ export default class Article extends Component {
     } else if (type === 2) {//杂谈
       mdArr = this.otherArticle
     }
-    this.setState({mdArr}, () => {
+    this.setState({ mdArr }, () => {
       this.showArticle()
     })
   }
@@ -71,7 +74,7 @@ export default class Article extends Component {
 
   //页码改变
   onPageChange = (currentPage) => {
-    this.setState({currentPage}, () => {
+    this.setState({ currentPage }, () => {
       this.showArticle()
     })
   }
@@ -92,6 +95,10 @@ export default class Article extends Component {
     this.showArticle()
   }
 
+  /**
+   * 新版文章函数
+   */
+
   componentDidMount() {
     this.setDateByRematch()
   }
@@ -100,31 +107,59 @@ export default class Article extends Component {
     if (JSON.stringify(nextState.currentArticle) !== JSON.stringify(this.state.currentArticle)) return true
     if (JSON.stringify(nextState.mdArr) !== JSON.stringify(this.state.mdArr)) return true
     if (nextState.searchValue !== this.state.searchValue) return true
+    if (nextState.showNew !== this.state.showNew) return true
     return false
   }
 
   render() {
-    const {currentArticle, mdArr, currentPage, searchValue} = this.state
+    const { currentArticle, mdArr, currentPage, searchValue, showNew } = this.state
     return (
-        <div className='articleContent'>
-          <div className='articleLeft'>
-            <Search className='searchContent' size='small' placeholder="搜索文章标题" value={searchValue} onChange={value => this.onChange(value)}
-                    onSearch={value => this.onSearch(value)}
-                    enterButton/>
-            <div className='typeContent'>
-              <div onClick={this.typeClick(0)}>全部 (<span>{this.allArticle.length}</span>)</div>
-              <div onClick={this.typeClick(1)}>前端 (<span>{this.webArticle.length}</span>)</div>
-              <div onClick={this.typeClick(2)}>杂谈 (<span>{this.otherArticle.length}</span>)</div>
+      <div className='articleContent'>
+        新版布局：
+        <Switch
+          checkedChildren={<Icon type="check" />}
+          unCheckedChildren={<Icon type="close" />}
+          defaultChecked
+          onChange={(type) => {
+            console.log(type)
+            this.setState({
+              showNew: type
+            })
+          }}
+        />
+
+        {showNew ?
+          //新版文章
+          <div className='articleNew'>
+            123
+          </div> :
+          // 旧版文章
+          <div className='articleOld'>
+            <div className='articleLeft'>
+              <Search className='searchContent' size='small' placeholder="搜索文章标题" value={searchValue} onChange={value => this.onChange(value)}
+                onSearch={value => this.onSearch(value)}
+                enterButton />
+              <div className='typeContent'>
+                <div onClick={this.typeClick(0)}>全部 (<span>{this.allArticle.length}</span>)</div>
+                <div onClick={this.typeClick(1)}>前端 (<span>{this.webArticle.length}</span>)</div>
+                <div onClick={this.typeClick(2)}>杂谈 (<span>{this.otherArticle.length}</span>)</div>
+              </div>
+              <div className='pageContent'>
+                <Pagination simple current={currentPage} total={mdArr.length} pageSize={1} onChange={this.onPageChange} />,
             </div>
-            <div className='pageContent'>
-              <Pagination simple current={currentPage} total={mdArr.length} pageSize={1} onChange={this.onPageChange}/>,
+            </div>
+            <div className='articleRight'>
+              <View title={currentArticle.title} detail={currentArticle.content} />{/*哪一篇文章的内容显示*/}
             </div>
           </div>
-          <div className='articleRight'>
-            <View title={currentArticle.title} detail={currentArticle.content}/>{/*哪一篇文章的内容显示*/}
-          </div>
-          <BackTop/>
-        </div>
+        }
+
+
+
+
+
+        <BackTop />
+      </div>
     );
   }
 }
