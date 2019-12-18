@@ -70,7 +70,7 @@ export default class Home extends Component {
         `${process.env.PUBLIC_URL}/plugins/SatisfySL.json`,
         [
           {
-            text: "2019",
+            text: "2020",
             textAlign: "left",
             delay: 500,
             y: 20,
@@ -147,8 +147,8 @@ export default class Home extends Component {
               <div className="first paper">
                 <div className="page front contents">
                   <div className="intro">
-                    <h2>葵花宝典</h2>
-                    <h1>2019</h1>
+                    <h2>修仙手册</h2>
+                    <h1>2020</h1>
                   </div>
                 </div>
                 <div className="page back"/>
