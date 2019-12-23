@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Drawer, List, Avatar } from 'antd';
 import styles from './index.module.less'
 import qq from '@img/qq.jpg'
+import Map from './map.js'
 
 export default class About extends Component {
   state = {
@@ -24,10 +25,6 @@ export default class About extends Component {
   };
 
   showDrawer = (data) => {
-    console.log(
-      data
-    );
-    
     this.setState({
       visible: true,
       drawerData: data
@@ -45,6 +42,7 @@ export default class About extends Component {
 
     return (
       <div className={styles.aboutContent}>
+        {/* 顶部显示的list */}
         <List
           dataSource={dataSource}
           bordered
@@ -65,6 +63,8 @@ export default class About extends Component {
             </List.Item>
           )}
         />
+
+        {/* 隐藏的抽屉 */}
         <Drawer
           width={400}
           placement="right"
@@ -75,6 +75,8 @@ export default class About extends Component {
           {drawerData}
         </Drawer>
 
+        {/* 在线百度地图 */}
+        <Map></Map>
       </div>
     );
   }
