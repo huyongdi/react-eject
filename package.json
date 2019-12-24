@@ -37,7 +37,7 @@
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mammoth": "^1.4.9",
