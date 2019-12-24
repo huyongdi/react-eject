@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import View from './View'
 import { Pagination, BackTop, Input, message, Switch, Icon } from 'antd';
 import store from '../../rematch/index'
-
+import style from './article.less'
 const { dispatch } = store
 
 const Search = Input.Search;
@@ -130,7 +130,7 @@ export default class Article extends Component {
 
         {showNew ?
           //新版文章
-          <div className='articleNew'>
+          <div className={style.articleNew}>
             123
           </div> :
           // 旧版文章
