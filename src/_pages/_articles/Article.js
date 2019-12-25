@@ -117,7 +117,7 @@ export default class Article extends Component {
     const { currentArticle, mdArr, currentPage, searchValue, showNew } = this.state
     return (
       <div className='articleContent'>
-        新版布局：
+        新布局：
         <Switch
           checkedChildren={<Icon type="check" />}
           unCheckedChildren={<Icon type="close" />}
