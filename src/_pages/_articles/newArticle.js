@@ -6,7 +6,16 @@ import axios from 'axios'
 
 var mammoth = require("mammoth");
 // const { Meta } = Card;
-
+var options = {
+    styleMap: [
+        // "p => span.a",
+        // "r => span.b",
+        "i => p.code",
+        "u => p.codeInline",
+    
+        // "p[style-name='Subsection Title'] => h2:fresh"
+    ]
+};
 export default class NewArticle extends Component {
 
     state = {
@@ -36,7 +45,7 @@ export default class NewArticle extends Component {
             currentDoc: item
         }, async () => {
             let respDoc = await axios.get(`${process.env.PUBLIC_URL}/doc/${item.id}.docx`, { responseType: 'arraybuffer' })
-            mammoth.convertToHtml({ arrayBuffer: respDoc.data })
+                mammoth.convertToHtml({ arrayBuffer: respDoc.data }, options)
                 .then(function (result) {
                     that.setState({
                         loading: false,
